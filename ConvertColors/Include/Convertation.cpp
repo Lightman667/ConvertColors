@@ -2,11 +2,11 @@
 #include <iostream>
 
 /**
- * @brief Получить структуру rgb из hsv
- * @param in_s16Hue - значение H
- * @param in_s8Saturation - значение S
- * @param in_s8Value - значение V
- * @return структура rgb
+ * @brief РџРѕР»СѓС‡РёС‚СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ rgb РёР· hsv
+ * @param in_s16Hue - Р·РЅР°С‡РµРЅРёРµ H
+ * @param in_s8Saturation - Р·РЅР°С‡РµРЅРёРµ S
+ * @param in_s8Value - Р·РЅР°С‡РµРЅРёРµ V
+ * @return СЃС‚СЂСѓРєС‚СѓСЂР° rgb
  */
 rgb_struct GetRGBfromHSV(s16 in_s16Hue, s8 in_s8Saturation, s8 in_s8Value) {
   if (in_s16Hue >= 0 && in_s8Saturation >= 0 && in_s8Value >= 0) {
@@ -42,9 +42,9 @@ rgb_struct GetRGBfromHSV(s16 in_s16Hue, s8 in_s8Saturation, s8 in_s8Value) {
 }
 
 /**
- * @brief Получить структуру HSV из комплексного числа
- * @param in_s32ComplexColor - комплексное число
- * @return структура hsv
+ * @brief РџРѕР»СѓС‡РёС‚СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ HSV РёР· РєРѕРјРїР»РµРєСЃРЅРѕРіРѕ С‡РёСЃР»Р°
+ * @param in_s32ComplexColor - РєРѕРјРїР»РµРєСЃРЅРѕРµ С‡РёСЃР»Рѕ
+ * @return СЃС‚СЂСѓРєС‚СѓСЂР° hsv
  */
 hsv_struct GetHSVfromComplex(s32 in_s32ComplexColor) {
   if (in_s32ComplexColor >= 0) {
@@ -58,11 +58,11 @@ hsv_struct GetHSVfromComplex(s32 in_s32ComplexColor) {
 }
 
 /**
- * @brief Конвертация RGB в HEX
- * @param in_u16Red - красный цвет (R)
- * @param in_u16Green - зеленый цвет (G)
- * @param in_u16Blue - синий цвет (B)
- * @return строка с HEX кодом
+ * @brief РљРѕРЅРІРµСЂС‚Р°С†РёСЏ RGB РІ HEX
+ * @param in_u16Red - РєСЂР°СЃРЅС‹Р№ С†РІРµС‚ (R)
+ * @param in_u16Green - Р·РµР»РµРЅС‹Р№ С†РІРµС‚ (G)
+ * @param in_u16Blue - СЃРёРЅРёР№ С†РІРµС‚ (B)
+ * @return СЃС‚СЂРѕРєР° СЃ HEX РєРѕРґРѕРј
  */
 //std::string ConvertRGBtoHex(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue) {
 //  if (in_u16Red <= 255 && in_u16Green <= 255 && in_u16Blue <= 255) {
@@ -76,11 +76,11 @@ hsv_struct GetHSVfromComplex(s32 in_s32ComplexColor) {
 //}
 
 /**
- * @brief Конвертация RGB в HSV
- * @param in_u16Red - красный цвет (R)
- * @param in_u16Green - зеленый цвет (G)
- * @param in_u16Blue - синий цвет (B)
- * @return структура hsv
+ * @brief РљРѕРЅРІРµСЂС‚Р°С†РёСЏ RGB РІ HSV
+ * @param in_u16Red - РєСЂР°СЃРЅС‹Р№ С†РІРµС‚ (R)
+ * @param in_u16Green - Р·РµР»РµРЅС‹Р№ С†РІРµС‚ (G)
+ * @param in_u16Blue - СЃРёРЅРёР№ С†РІРµС‚ (B)
+ * @return СЃС‚СЂСѓРєС‚СѓСЂР° hsv
  */
 hsv_struct ConvertRGBtoHSV(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue) {
   if (in_u16Red <= 255 && in_u16Green <= 255 && in_u16Blue <= 255) {
@@ -128,11 +128,11 @@ hsv_struct ConvertRGBtoHSV(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue) {
 }
 
 /**
- * @brief Конвертировать HSV в комплексное число
- * @param in_u16Hue - H (2 байта)
- * @param in_u8Saturation - S (1 байт)
- * @param in_u8Bright - V (1 байт)
- * @return комплексное число
+ * @brief РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ HSV РІ РєРѕРјРїР»РµРєСЃРЅРѕРµ С‡РёСЃР»Рѕ
+ * @param in_u16Hue - H (2 Р±Р°Р№С‚Р°)
+ * @param in_u8Saturation - S (1 Р±Р°Р№С‚)
+ * @param in_u8Bright - V (1 Р±Р°Р№С‚)
+ * @return РєРѕРјРїР»РµРєСЃРЅРѕРµ С‡РёСЃР»Рѕ
  */
 u32 ConvertHSVtoComplex(u16 in_u16Hue, u8 in_u8Saturation, u8 in_u8Bright) {
   if (in_u16Hue <= 360 && in_u8Saturation <= 100 && in_u8Bright <= 100)

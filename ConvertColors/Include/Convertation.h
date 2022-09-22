@@ -4,18 +4,18 @@
 #include <string>
 
 typedef struct rgb_struct {
-  f32 m_f32Red;    // красный цвет (R)
-  f32 m_f32Green;  // зеленый цвет (G)
-  f32 m_f32Blue;   // синий цвет   (B)
+  f32 m_f32Red;    // РєСЂР°СЃРЅС‹Р№ С†РІРµС‚ (R)
+  f32 m_f32Green;  // Р·РµР»РµРЅС‹Р№ С†РІРµС‚ (G)
+  f32 m_f32Blue;   // СЃРёРЅРёР№ С†РІРµС‚   (B)
 } rgb_struct;
 
 typedef struct hsv_struct {
-  f32 m_f32Hue;         // тон (H)
-  f32 m_f32Saturation;  // насыщенность (S)
-  f32 m_f32Value;       // яркость   (V)
+  f32 m_f32Hue;         // С‚РѕРЅ (H)
+  f32 m_f32Saturation;  // РЅР°СЃС‹С‰РµРЅРЅРѕСЃС‚СЊ (S)
+  f32 m_f32Value;       // СЏСЂРєРѕСЃС‚СЊ   (V)
 } hsv_struct;
 
-// Конвертация цветов
+// РљРѕРЅРІРµСЂС‚Р°С†РёСЏ С†РІРµС‚РѕРІ
 rgb_struct GetRGBfromHSV(s16 in_s16Hue, s8 in_s8Saturation, s8 in_s8Value);
 hsv_struct GetHSVfromComplex(s32 in_s32ComplexColor);
 std::string ConvertRGBtoHex(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue);
