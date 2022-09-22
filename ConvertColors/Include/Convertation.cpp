@@ -1,5 +1,8 @@
 #include "Convertation.h"
+
+#include <iomanip>
 #include <iostream>
+#include <sstream>
 
 /**
  * @brief Получить структуру rgb из hsv
@@ -42,7 +45,7 @@ rgb_struct GetRGBfromHSV(s16 in_s16Hue, s8 in_s8Saturation, s8 in_s8Value) {
 }
 
 /**
- * @brief Получить структуру HSV из комплексного числа
+ * @brief Получить структуру HSV из 32-битного числа
  * @param in_s32ComplexColor - комплексное число
  * @return структура hsv
  */
@@ -64,16 +67,16 @@ hsv_struct GetHSVfromComplex(s32 in_s32ComplexColor) {
  * @param in_u16Blue - синий цвет (B)
  * @return строка с HEX кодом
  */
-//std::string ConvertRGBtoHex(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue) {
-//  if (in_u16Red <= 255 && in_u16Green <= 255 && in_u16Blue <= 255) {
-//    const u32 l_u32Color = (in_u16Red << 16) | (in_u16Green << 8) | in_u16Blue;
-//    std::stringstream l_sHexCode;
-//    l_sHexCode << std::hex << std::uppercase << std::setfill('0')
-//               << std::setw(6) << l_u32Color;
-//    return l_sHexCode.str();
-//  }
-//  return "FFFFFF";
-//}
+std::string ConvertRGBtoHex(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue) {
+  if (in_u16Red <= 255 && in_u16Green <= 255 && in_u16Blue <= 255) {
+    const u32 l_u32Color = (in_u16Red << 16) | (in_u16Green << 8) | in_u16Blue;
+    std::stringstream l_sHexCode;
+    l_sHexCode << std::hex << std::uppercase << std::setfill('0')
+               << std::setw(6) << l_u32Color;
+    return l_sHexCode.str();
+  }
+  return WHITE;
+}
 
 /**
  * @brief Конвертация RGB в HSV
@@ -128,11 +131,11 @@ hsv_struct ConvertRGBtoHSV(u16 in_u16Red, u16 in_u16Green, u16 in_u16Blue) {
 }
 
 /**
- * @brief Конвертировать HSV в комплексное число
+ * @brief Конвертировать HSV в 32-битное число
  * @param in_u16Hue - H (2 байта)
  * @param in_u8Saturation - S (1 байт)
  * @param in_u8Bright - V (1 байт)
- * @return комплексное число
+ * @return 32-битное число
  */
 u32 ConvertHSVtoComplex(u16 in_u16Hue, u8 in_u8Saturation, u8 in_u8Bright) {
   if (in_u16Hue <= 360 && in_u8Saturation <= 100 && in_u8Bright <= 100)

@@ -1,7 +1,10 @@
 #pragma once
 
-#include "Types.h"
 #include <string>
+
+#include "Types.h"
+
+#define WHITE "FFFFFF"
 
 typedef struct rgb_struct {
   f32 m_f32Red;    // красный цвет (R)
